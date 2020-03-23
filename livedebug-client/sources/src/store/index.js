@@ -2,8 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
-
-
 const covid = axios.create({
   // baseURL: 'http://localhost:3000',
   baseURL: 'https://ziterz-covid19.herokuapp.com'
