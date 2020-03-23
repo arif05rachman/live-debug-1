@@ -1,6 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Loan = sequelize.init('Loan', {
+  const { Model } = sequelize.Sequelize
+
+  class Loan extends Model { }
+  
+  Loan.init({
     MemberId: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -44,9 +48,10 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     date_returned: DataTypes.DATE
-  }, {});
+  }, {sequelize});
   Loan.associate = function(models) {
     Loan.belongsTo(models.Member)
     Loan.belongsTo(models.Book)
   };
+  return Loan;
 };

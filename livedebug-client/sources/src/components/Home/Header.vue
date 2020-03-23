@@ -71,9 +71,6 @@ export default {
     this.fetchGlobals()
     this.fetchCountries()
   },
-  beforeUpdate () {
-    console.log(this.$store.state.globals)
-  },
   computed: {
     globals () {
       return this.$store.state.globals
