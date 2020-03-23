@@ -64,12 +64,15 @@ export default {
       this.$store.dispatch('fetchGlobals')
     },
     fetchCountries () {
-      this.store.commit('fetchCountries')
+      this.$store.dispatch('fetchCountries')
     }
   },
   created () {
     this.fetchGlobals()
     this.fetchCountries()
+  },
+  beforeUpdate () {
+    console.log(this.$store.state.globals)
   },
   computed: {
     globals () {
